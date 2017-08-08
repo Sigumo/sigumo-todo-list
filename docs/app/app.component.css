@@ -1,0 +1,20 @@
+#footer{
+	text-align: center;
+	margin:10px;
+	margin-top:0px;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.todo-list-items button{
+    float: right;
+}
+
+.content{
+    margin: 2%;
+}
+
+.clear{
+    clear: both;
+}
