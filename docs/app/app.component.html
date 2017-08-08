@@ -1,7 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <section class="">
   <header>
-    <h1 class="page-header">TODO list</h1>
+    <h1 class="page-header">TODOS</h1>
   </header>
   <div class="input-group content">
     <span class="input-group-addon">Add</span>
@@ -11,16 +10,15 @@
     <ul class="list-group panel-body">
       <li *ngFor="let todo of todos" class="list-group-item well todo-list-items">
         <div>
-          <input class="toggle" type="checkbox" aria-label="..." (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+          <input type="checkbox" aria-label="..." (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
           <label>{{todo.title}}</label>
           <button class="btn btn-default" (click)="removeTodo(todo)"><span class="glyphicon glyphicon-remove"></span></button>
         </div>
       </li>
     </ul>
   </section>
-  <div class="clear"></div>
-  <footer id="footer">
-    <span class="todo-count"><strong>{{todos.length}}</strong>{{todos.length == 1 ? 'item' : 'items'}} left </span>
+  <footer class="navbar navbar-default navbar-fixed-bottom">
+    <span><strong>{{todos.length}}</strong>{{todos.length == 1 ? ' item' : ' items'}} left </span>
     <p>Created by Ivan Kravchuk</p>
   </footer>
 </section>
