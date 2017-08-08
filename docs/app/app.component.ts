@@ -9,7 +9,7 @@ import { Todo } from './todo';
   providers: [TodoDataService]
 })
 export class AppComponent {
-  
+
   newTodo: Todo = new Todo();
 
   constructor(private todoDataService: TodoDataService){
@@ -22,6 +22,7 @@ export class AppComponent {
 
   addTodo(){
     this.todoDataService.addTodo(this.newTodo);
+    console.log(this.newTodo.title);
     this.newTodo = new Todo();
   }
 
