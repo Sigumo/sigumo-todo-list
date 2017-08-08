@@ -1,27 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <section class="">
-  <header class="input-group">
-    <h1>TODO list</h1>
-    <input class="form-control" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+  <header>
+    <h1 class="page-header">TODO list</h1>
   </header>
-  <section class="panel panel-default" *ngIf="todos.length > 0">
+  <div class="input-group content">
+    <span class="input-group-addon">Add</span>
+    <input class="form-control" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" aria-describedby="basic-addon1">
+  </div>
+  <section class="panel panel-default content" *ngIf="todos.length > 0">
     <ul class="list-group panel-body">
-      <li *ngFor="let todo of todos" [class.completed]="todo.complete" class="list-group-item">
-        <div class="">
-          <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+      <li *ngFor="let todo of todos" class="list-group-item well todo-list-items">
+        <div>
+          <input class="toggle" type="checkbox" aria-label="..." (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
           <label>{{todo.title}}</label>
           <button class="btn btn-default" (click)="removeTodo(todo)"><span class="glyphicon glyphicon-remove"></span></button>
         </div>
       </li>
     </ul>
   </section>
-<<<<<<< Updated upstream
-  <footer class="footer" *ngIf="todos.length > 0">
-=======
   <div class="clear"></div>
-  <footer id="nav-bar nav-fixed-bottom">
->>>>>>> Stashed changes
+  <footer id="footer">
     <span class="todo-count"><strong>{{todos.length}}</strong>{{todos.length == 1 ? 'item' : 'items'}} left </span>
+    <p>Created by Ivan Kravchuk</p>
   </footer>
 </section>
 
