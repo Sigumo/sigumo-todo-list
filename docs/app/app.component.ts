@@ -24,6 +24,8 @@ export class AppComponent {
 
   toggleTodoComplete(todo){
     this.todoDataService.toggleTodoComplete(todo);
+    this.DataStorageService.put(todo, {complete: !todo.complete});
+    this.DataStorageService.update();
   }
 
   addTodo(){
@@ -37,7 +39,7 @@ export class AppComponent {
     this.DataStorageService.destroy(todo);
   }
 
-  get todos(){
+  get todos(): Todo[]{
     return this.DataStorageService.todoList;
   }
 }
