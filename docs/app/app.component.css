@@ -17,3 +17,18 @@
 section section{
 	margin-bottom: 50px;
 }
+
+.btn-in-tbl{
+	float:right;
+	width: 5%;
+}
+
+.checkbox{
+	float: left;
+	width: 2%;
+}
+
+.textbox{
+	width: 93%;
+	word-break: break-all;
+}

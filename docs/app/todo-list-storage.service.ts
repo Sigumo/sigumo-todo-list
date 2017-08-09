@@ -30,7 +30,7 @@ export class TodoListStorageService {
     return this.update();
   }
 
-  private update() {
+  update() {
     localStorage.setItem(storageName, JSON.stringify(this.todoList));
     return this.get();
   }

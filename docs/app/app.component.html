@@ -3,16 +3,20 @@
     <h1 class="page-header">TODOS</h1>
   </header>
   <div class="input-group content">
-    <span class="input-group-addon">Press Enter to add</span>
     <input class="form-control" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" aria-describedby="basic-addon1">
+    <span class="input-group-addon">Press Enter to add</span>
   </div>
   <section class="panel panel-default content" *ngIf="todos.length > 0">
     <ul class="list-group panel-body">
       <li *ngFor="let todo of todos" class="list-group-item well todo-list-items">
         <div>
-          <input type="checkbox"  (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-          <label>{{todo.title}}</label>
-          <button class="btn btn-default" (click)="removeTodo(todo)">Remove <span class="glyphicon glyphicon-remove"></span></button>
+          <table>
+            <tr>
+              <td class="checkbox"><input type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete"></td>
+              <td class="textbox"><label>{{todo.title}}</label></td>
+              <td class="btn-in-tbl"><button class="btn btn-default" (click)="removeTodo(todo)">Remove</button></td>
+            </tr>
+          </table>
         </div>
       </li>
     </ul>
